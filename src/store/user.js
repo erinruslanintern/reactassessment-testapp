@@ -16,14 +16,20 @@ const userSlice = createSlice(
                 state.users.push(
                     {
                         ...action.payload,
-                        id: state.users.length + 1
+                        id: state.users[state.users.length - 1].id + 1
                     }
                 );
             },
-            editUser()
-            {},
-            removeUser()
-            {},
+            editUser(state, action)
+            {
+                state.users = state.users.filter(user => user.id !== action.payload.id);
+                state.users.push(action.payload);
+                state.users.sort((a, b) => (a.id > b.id)? 1 : -1);
+            },
+            removeUser(state, action)
+            {
+                state.users = state.users.filter(user => user.id !== action.payload.id);
+            },
             setFetchedData(state, action)
             {
                 state.users = action.payload;

@@ -1,5 +1,7 @@
 import classes from './UserCard.module.css';
 
+import {Link} from 'react-router-dom';
+
 const UserCard = (props) =>
 {
     return(
@@ -31,8 +33,8 @@ const UserCard = (props) =>
                     {props.userData.company.name}, {props.userData.company.catchPhrase}, {props.userData.company.bs}
                 </p>
             </div>
-            <div>Edit data</div>
-            <div>Remove data</div>
+            <Link to={`/EditUser/${props.userData.id}`}>Edit data</Link>
+            <Link to={`/RemoveUser/${props.userData.id}`}>Remove data</Link>
         </div>
     )
 }

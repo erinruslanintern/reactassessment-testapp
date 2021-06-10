@@ -1,15 +1,16 @@
 import './App.css';
-import UserList from './components/UserList';
-import UserForm from './components/UserForm';
+import MainPage from './pages/MainPage';
+import FormPage from './pages/FormPage';
+import RemovePage from './pages/RemovePage';
 
 import {useEffect} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import {userActions} from './store/user';
+import {Route, Switch, Redirect} from 'react-router-dom';
 
 function App() 
 {
   const dispatch = useDispatch();
-  const data = useSelector(state => state.user.users);
 
   useEffect(() =>
   {
@@ -23,18 +24,28 @@ function App()
     fetchData();
   }, [])
 
-  useEffect(() =>
-  {
-    console.log(data);
-  }, [data])
-
   return (
     <div>
-      <button>Add New User</button>
-      <h1>
-        Users
-      </h1>
-      <UserForm />
+      <Switch>
+          <Route path='/' exact>
+            <Redirect to='/Main' />
+          </Route>
+          <Route path="/Main" exact>
+            <MainPage />
+          </Route>
+          <Route path="/AddUser">
+            <FormPage />
+          </Route>
+          <Route path="/EditUser/:userid">
+            <FormPage />
+          </Route>
+          <Route path="/RemoveUser/:userid">
+            <RemovePage />
+          </Route>
+          <Route path="/">
+            <Redirect to='/Main' />
+          </Route>
+        </Switch>
     </div>
   );
 }

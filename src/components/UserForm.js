@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
+import {useParams, useHistory} from 'react-router-dom';
 import {userActions} from '../store/user';
 import {dataActions} from '../store/data';
 
@@ -7,6 +8,19 @@ const UserForm = () =>
 {
     const dispatch = useDispatch();
     const data = useSelector(state => state.data.user)
+    const existData = useSelector(state => state.user.users)
+    const params = useParams();
+    const history = useHistory();
+
+    useEffect(() =>
+    {
+        if(params)
+        {
+            const calledData = existData.find(user => user.id.toString() === params.userid);
+
+            dispatch(dataActions.setData(calledData));
+        }
+    }, [])
 
     const editDataHandler = (formData) =>
     {
@@ -16,8 +30,24 @@ const UserForm = () =>
     const submitHandler = event => 
     {
         event.preventDefault();
-        dispatch(userActions.addUser(data));
-        dispatch(dataActions.resetData());
+
+        if(params)
+        {
+            dispatch(dataActions.setData(
+                {
+                    ...data,
+                    id: parseInt(params.userid)
+                }
+            ))
+            dispatch(userActions.editUser(data));
+            dispatch(dataActions.resetData());
+            history.replace('/Main');
+        }
+        else
+        {
+            dispatch(userActions.addUser(data));
+            dispatch(dataActions.resetData());
+        }
     };
 
     return(
@@ -220,7 +250,7 @@ const UserForm = () =>
                     }
                 })} />
             <br />
-            <button type='submit'>Add User</button>
+            <button type='submit'>{!params? 'Add User' : 'Edit User'}</button>
         </form>
     )
 }
