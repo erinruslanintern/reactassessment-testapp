@@ -4,7 +4,7 @@ import UserCard from '../UI/UserCard';
 
 const UserList = () =>
 {
-    const users = useSelector(state => state.users)
+    const users = useSelector(state => state.user.users)
 
     return(
         <div>

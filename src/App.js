@@ -1,12 +1,15 @@
 import './App.css';
 import UserList from './components/UserList';
+import UserForm from './components/UserForm';
+
 import {useEffect} from 'react';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {userActions} from './store/user';
 
 function App() 
 {
   const dispatch = useDispatch();
+  const data = useSelector(state => state.user.users);
 
   useEffect(() =>
   {
@@ -18,12 +21,20 @@ function App()
     }
 
     fetchData();
-
   }, [])
 
+  useEffect(() =>
+  {
+    console.log(data);
+  }, [data])
+
   return (
-    <div className="App">
-      <UserList />
+    <div>
+      <button>Add New User</button>
+      <h1>
+        Users
+      </h1>
+      <UserForm />
     </div>
   );
 }

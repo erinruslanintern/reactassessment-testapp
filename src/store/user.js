@@ -1,4 +1,4 @@
-import {createSlice, configureStore} from '@reduxjs/toolkit';
+import {createSlice} from '@reduxjs/toolkit';
 
 const initUser =
 {
@@ -11,8 +11,15 @@ const userSlice = createSlice(
         initialState: initUser,
         reducers:
         {
-            addUser()
-            {},
+            addUser(state, action)
+            {
+                state.users.push(
+                    {
+                        ...action.payload,
+                        id: state.users.length + 1
+                    }
+                );
+            },
             editUser()
             {},
             removeUser()
@@ -25,7 +32,5 @@ const userSlice = createSlice(
     }
 )
 
-const store = configureStore(userSlice);
-
 export const userActions = userSlice.actions;
-export default store;
+export default userSlice;
