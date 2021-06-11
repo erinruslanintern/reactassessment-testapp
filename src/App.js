@@ -46,6 +46,9 @@ function App()
           <Route path="/RemoveUser/:userid">
             <RemovePage />
           </Route>
+          <Route path="/RemoveAll">
+            <RemovePage />
+          </Route>
           <Route path="/">
             <Redirect to='/Main' />
           </Route>

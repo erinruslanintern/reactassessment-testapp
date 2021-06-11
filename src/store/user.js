@@ -11,12 +11,22 @@ const userSlice = createSlice(
         initialState: initUser,
         reducers:
         {
+            setFetchedData(state, action)
+            {
+                state.users = action.payload;
+            },
             addUser(state, action)
             {
+                let idVal = 1;
+                if(state.users.length > 0)
+                {
+                    idVal = state.users[state.users.length - 1].id + 1;
+                }
+
                 state.users.push(
                     {
                         ...action.payload,
-                        id: state.users[state.users.length - 1].id + 1
+                        id: idVal
                     }
                 );
             },
@@ -30,9 +40,9 @@ const userSlice = createSlice(
             {
                 state.users = state.users.filter(user => user.id !== action.payload.id);
             },
-            setFetchedData(state, action)
+            removeAll(state)
             {
-                state.users = action.payload;
+                state.users = [];
             }
         }
     }

@@ -13,6 +13,7 @@ const MainPage = () =>
             <div className={classes.subheader}>
                 <span className={classes.subheadercontentleft}></span>
                 <Link to='/AddUser' className={classes.subheadercontentright}>Add New User</Link>
+                <Link to='/RemoveAll' className={classes.subheadercontentright}>Clear All Data</Link>
             </div>
             <UserList />
         </div>

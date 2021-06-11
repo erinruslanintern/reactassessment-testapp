@@ -14,30 +14,52 @@ const RemovePage = () =>
 
     const removeHandler = () =>
     {
-        dispatch(userActions.removeUser(
-            {
-                id: parseInt(params.userid)
-            }
-        ));
+        if(params.userid)
+        {
+            dispatch(userActions.removeUser(
+                {
+                    id: parseInt(params.userid)
+                }
+            ));
+        }
+        else
+        {
+            dispatch(userActions.removeAll());
+        }
 
         history.replace('/Main');
     }
 
+    const backHandler = () =>
+    {
+        if(params.userid)
+        {
+            history.push(`/UserProfile/${params.userid}`);
+        }
+        else
+        {
+            history.push('/Main');
+        }
+    }
+
     return(
         <div>
-            <div className={classes.mainquestion}>
+            {params.userid && (<div className={classes.mainquestion}>
                 Are you sure you want<br />to remove this user?
-            </div>
-            <div className={classes.userblock}>
+            </div>)}
+            {!params.userid && (<div className={classes.mainquestion}>
+                Are you sure you want<br />to remove all user?
+            </div>)}
+            {params.userid && (<div className={classes.userblock}>
                 <span className={classes.name}>
                     {deleteUser.name}
                 </span>
                 <span className={classes.uname}>
                     {deleteUser.username}
                 </span>
-            </div>
+            </div>)}
             <div className={classes.confirmation}>
-                <button onClick={() => history.push(`/UserProfile/${params.userid}`)}>No</button>
+                <button onClick={backHandler}>No</button>
                 <button onClick={removeHandler}>Yes</button>
             </div>
         </div>

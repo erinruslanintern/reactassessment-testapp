@@ -1,17 +1,24 @@
 import React from 'react';
-import {useSelector} from 'react-redux';
 import UserCard from '../UI/UserCard';
+import classes from './UserList.module.css';
+
+import {useSelector} from 'react-redux';
 
 const UserList = () =>
 {
     const users = useSelector(state => state.user.users)
+    const usersExist = users.length > 0;
 
     return(
         <div>
-            {users.map(user =>
+            {usersExist && (users.map(user =>
                 <UserCard
                     key={user.id}
                     userData={user}/>
+            ))}
+            {!usersExist && (<div className={classes.nodata}>
+                    No user data available...
+                </div>
             )}
         </div>
     )
