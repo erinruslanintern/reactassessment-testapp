@@ -1,4 +1,5 @@
 import './App.css';
+import axios from 'axios';
 import MainPage from './pages/MainPage';
 import FormPage from './pages/FormPage';
 import RemovePage from './pages/RemovePage';
@@ -16,9 +17,8 @@ function App()
   {
     const fetchData = async () =>
     {
-      const res = await fetch('https://jsonplaceholder.typicode.com/users');
-      const resData = await res.json();
-      dispatch(userActions.setFetchedData(resData));
+      const resData = await axios.get('https://jsonplaceholder.typicode.com/users');
+      dispatch(userActions.setFetchedData(resData.data));
     }
 
     fetchData();

@@ -6,6 +6,7 @@ const FormPage = () =>
 {
     return(
         <div>
+            <h2>User Form</h2>
             <Link to='/Main'>Back</Link>
             <UserForm />
         </div>

@@ -14,11 +14,15 @@ const UserForm = () =>
 
     useEffect(() =>
     {
-        if(params)
+        if(params.userid)
         {
             const calledData = existData.find(user => user.id.toString() === params.userid);
 
             dispatch(dataActions.setData(calledData));
+        }
+        else
+        {
+            dispatch(dataActions.resetData());
         }
     }, [])
 
@@ -31,7 +35,7 @@ const UserForm = () =>
     {
         event.preventDefault();
 
-        if(params)
+        if(params.userid)
         {
             dispatch(dataActions.setData(
                 {
@@ -47,6 +51,7 @@ const UserForm = () =>
         {
             dispatch(userActions.addUser(data));
             dispatch(dataActions.resetData());
+            history.replace('/Main');
         }
     };
 
@@ -250,7 +255,7 @@ const UserForm = () =>
                     }
                 })} />
             <br />
-            <button type='submit'>{!params? 'Add User' : 'Edit User'}</button>
+            <button type='submit'>{!params.userid? 'Add User' : 'Edit User'}</button>
         </form>
     )
 }
