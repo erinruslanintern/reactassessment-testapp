@@ -1,4 +1,4 @@
-import UserCard from '../UI/UserCard';
+import classes from './RemovePage.module.css';
 
 import {useParams, useHistory} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
@@ -25,9 +25,21 @@ const RemovePage = () =>
 
     return(
         <div>
-            <UserCard userData={deleteUser} />
-            <button onClick={() => history.push(`/UserProfile/${params.userid}`)}>No</button>
-            <button onClick={removeHandler}>Yes</button>
+            <div className={classes.mainquestion}>
+                Are you sure you want<br />to remove this user?
+            </div>
+            <div className={classes.userblock}>
+                <span className={classes.name}>
+                    {deleteUser.name}
+                </span>
+                <span className={classes.uname}>
+                    {deleteUser.username}
+                </span>
+            </div>
+            <div className={classes.confirmation}>
+                <button onClick={() => history.push(`/UserProfile/${params.userid}`)}>No</button>
+                <button onClick={removeHandler}>Yes</button>
+            </div>
         </div>
     )
 }
