@@ -6,7 +6,7 @@ import classes from './MainPage.module.css';
 const MainPage = () =>
 {
     return(
-        <div>
+        <div className={classes.main}>
             <div className={classes.header}>
                 <span className={classes.headercontent}>Users</span>
             </div>

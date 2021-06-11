@@ -1,0 +1,86 @@
+body
+{
+  background-color: rgb(201, 201, 201);
+}
+
+.main
+{
+  background-color: rgb(201, 201, 201);
+  text-align: center;
+  padding: 0 0 3%;
+}
+
+.header 
+{
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  background-color: #353535;
+}
+
+.header :hover
+{
+  color: white;
+}
+
+.headercontent
+{
+  width: 100%;
+  text-align: left;
+  text-decoration-line: none;
+  font-size: 150%;
+  font-family: "Times New Roman", Times, serif;
+  color: rgb(207, 207, 207);
+  padding: 0 1%;
+}
+
+.headercontentright
+{
+  width: 10%;
+  text-align: center;
+  text-decoration-line: none;
+  font-size: 130%;
+  font-family: "Times New Roman", Times, serif;
+  color: rgb(207, 207, 207);
+  padding: 0 1%;
+}
+
+.maintitle
+{
+  color: black;
+  font-size: 250%;
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+  text-shadow: 1px 2px gray;
+  padding: 4% 0 2%;
+}
+
+.title
+{
+  color: black;
+  font-size: 175%;
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+  text-decoration-line: underline;
+  text-decoration-color: rgb(236, 236, 236);
+  padding: 2% 0 1%;
+}
+
+.datablock
+{
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+  width: 55%;
+  max-width: 40rem;
+}
+
+.datablockcontent
+{
+  width: 100%;
+  text-align: left;
+  font-size: 110%;
+}

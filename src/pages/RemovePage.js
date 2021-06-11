@@ -26,7 +26,7 @@ const RemovePage = () =>
     return(
         <div>
             <UserCard userData={deleteUser} />
-            <button onClick={() => history.push('/Main')}>No</button>
+            <button onClick={() => history.push(`/UserProfile/${params.userid}`)}>No</button>
             <button onClick={removeHandler}>Yes</button>
         </div>
     )

@@ -3,6 +3,7 @@ import axios from 'axios';
 import MainPage from './pages/MainPage';
 import FormPage from './pages/FormPage';
 import RemovePage from './pages/RemovePage';
+import ProfilePage from './pages/ProfilePage';
 
 import {useEffect} from 'react';
 import {useDispatch} from 'react-redux';
@@ -32,6 +33,9 @@ function App()
           </Route>
           <Route path="/Main" exact>
             <MainPage />
+          </Route>
+          <Route path="/UserProfile/:userid">
+            <ProfilePage />
           </Route>
           <Route path="/AddUser">
             <FormPage />
