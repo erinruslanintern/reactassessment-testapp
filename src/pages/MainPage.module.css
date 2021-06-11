@@ -1,3 +1,8 @@
+body
+{
+  background-color: rgb(201, 201, 201);
+}
+
 .main
 {
   background-color: rgb(201, 201, 201);
@@ -6,9 +11,9 @@
 .header 
 {
   width: 100%;
-  height: 6rem;
+  height: 5rem;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   background-color: #353535;
 }
 
@@ -22,26 +27,40 @@
   font-family: "Times New Roman", Times, serif;
 }
 
-.addnew
+.subheader
 {
   width: 100%;
-  height: 5rem;
+  height: auto;
   display: flex;
   align-items: center;
-  justify-content: center;
+  background-color: #353535;
+  padding: 1px 0;
+  margin: 0 0 3%;
 }
 
-.addnew :hover
+.subheader :hover
 {
-  color: #000000;
-  text-decoration-line: underline;
+  color: white;
 }
 
-.addnewcontent
+.subheadercontentright
 {
+  width: 12%;
   text-align: center;
   text-decoration-line: none;
-  font-size: 150%;
-  font-weight: 50px;
-  color: rgb(121, 119, 119);
+  font-size: 130%;
+  font-family: "Times New Roman", Times, serif;
+  color: rgb(207, 207, 207);
+  padding: 0 1%;
+}
+
+.subheadercontentleft
+{
+  width: 100%;
+  text-align: left;
+  text-decoration-line: none;
+  font-size: 130%;
+  font-family: "Times New Roman", Times, serif;
+  color: rgb(207, 207, 207);
+  padding: 0 1%;
 }

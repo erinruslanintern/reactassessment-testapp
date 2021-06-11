@@ -11,20 +11,33 @@
 
 .maincard
 {
-    margin: 1rem auto;
-    padding: 1rem;
+    margin: 25px auto;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     text-decoration-line: none;
     color: black;
     background-color: rgb(107, 107, 107);
     border-radius: 1rem;
-    width: 90%;
+    width: 35%;
     max-width: 40rem;
+    text-align: center;
 }
 
 .maincard :hover
 {
     border-style: none;
     border-color: transparent;
+}
+
+.name
+{
+    font-size: 175%;
+    font-weight: bold;
+}
+
+.uname
+{
+    font-size: 125%;
+    font-weight: 500;
 }

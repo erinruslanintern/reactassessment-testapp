@@ -1,4 +1,5 @@
 import UserForm from '../components/UserForm';
+import classes from './FormPage.module.css';
 
 import {Link, useParams} from 'react-router-dom';
 
@@ -13,9 +14,16 @@ const FormPage = () =>
     }
 
     return(
-        <div>
-            <h2>User Form</h2>
-            <Link to={backPath}>Back</Link>
+        <div className={classes.main}>
+            <div className={classes.header}>
+                <span className={classes.headercontent}>
+                    {!params.userid && 'New User'}
+                    {params.userid && 'Edit User'}
+                </span>
+            </div>
+            <div className={classes.subheader}>
+                <Link to={backPath} className={classes.subheadercontentleft}>Back</Link>
+            </div>
             <UserForm />
         </div>
     )

@@ -7,11 +7,12 @@ const UserCard = (props) =>
     return(
         <div className={classes.holder}>
             <Link to={`/UserProfile/${props.userData.id}`} className={classes.maincard}>
-                <h2>{props.userData.name}</h2>
-                <p>
-                    <span>Username: </span>
+                <span className={classes.name}>
+                    {props.userData.name}
+                </span>
+                <span className={classes.uname}>
                     {props.userData.username}
-                </p>
+                </span>
             </Link>
         </div>
     )

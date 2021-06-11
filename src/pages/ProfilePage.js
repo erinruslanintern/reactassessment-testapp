@@ -13,13 +13,19 @@ const ProfilePage = () =>
     return(
         <div className={classes.main}>
             <div className={classes.header}>
-                <Link to='/Main' className={classes.headercontent}>
+                <span className={classes.headercontentleft}></span>
+                <span className={classes.headercontent}>
+                    Profile
+                </span>
+            </div>
+            <div className={classes.subheader}>
+                <Link to='/Main' className={classes.subheadercontentleft}>
                     Back
                 </Link>
-                <Link to={`/EditUser/${user.id}`} className={classes.headercontentright}>
+                <Link to={`/EditUser/${user.id}`} className={classes.subheadercontentright}>
                     Edit data
                 </Link>
-                <Link to={`/RemoveUser/${user.id}`} className={classes.headercontentright}>
+                <Link to={`/RemoveUser/${user.id}`} className={classes.subheadercontentright}>
                     Remove data
                 </Link>
             </div>

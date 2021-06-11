@@ -1,0 +1,84 @@
+input
+{
+    text-align: center;
+    font-size: 100%;
+    border-radius: 5px;
+}
+
+textarea
+{
+    width: 100%;
+    font-size: 120%;
+    border-radius: 5px;
+}
+
+td
+{
+    padding: 0 10px 10px;
+}
+
+table
+{
+    margin: 0 0 5px;
+}
+
+button
+{
+    background-color: rgb(133, 133, 133);
+    border-style: none;
+    border-radius: 25px;
+    width: 15%;
+    height: 3rem;
+    margin: 40px 0;
+    font-weight: bold;
+}
+
+.button
+{
+    border-style: none;
+}
+
+.button :hover
+{
+    background-color: rgb(88, 88, 88);
+    color:rgb(236, 236, 236);
+}
+
+.maintitle
+{
+  color: black;
+  font-size: 250%;
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+  text-shadow: 1px 2px gray;
+  padding: 4% 0 2%;
+}
+
+.title
+{
+  color: black;
+  font-size: 175%;
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+  text-decoration-line: underline;
+  text-decoration-color: rgb(236, 236, 236);
+  padding: 2% 0 1%;
+}
+
+.datablock
+{
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+  width: 55%;
+  max-width: 40rem;
+}
+
+.datablockcontent
+{
+  width: 100%;
+  text-align: left;
+  font-size: 110%;
+}
