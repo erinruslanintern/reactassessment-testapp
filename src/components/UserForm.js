@@ -22,10 +22,6 @@ const UserForm = () =>
 
             dispatch(dataActions.setData(calledData));
         }
-        else
-        {
-            dispatch(dataActions.resetData());
-        }
     }, [])
 
     const editDataHandler = (formData) =>
@@ -76,7 +72,8 @@ const UserForm = () =>
                                 {
                                     ...data,
                                     name: event.target.value
-                                })}/>
+                                })}
+                                required />
                         </td>
                         <td>
                             <label>Username</label><br />
@@ -88,7 +85,8 @@ const UserForm = () =>
                                 {
                                     ...data,
                                     username: event.target.value
-                                })} />
+                                })} 
+                                required />
                         </td>
                     </tr>
                     <tr>

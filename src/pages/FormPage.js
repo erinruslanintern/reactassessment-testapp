@@ -2,10 +2,13 @@ import UserForm from '../components/UserForm';
 import classes from './FormPage.module.css';
 
 import {Link, useParams} from 'react-router-dom';
+import {useDispatch} from 'react-redux';
+import {dataActions} from '../store/data';
 
 const FormPage = () =>
 {
     const params = useParams();
+    const dispatch = useDispatch();
     var backPath = `/UserProfile/${params.userid}`;
 
     if(!params.userid)
@@ -22,7 +25,22 @@ const FormPage = () =>
                 </span>
             </div>
             <div className={classes.subheader}>
-                <Link to={backPath} className={classes.subheadercontentleft}>Back</Link>
+                {!params.userid && <Link 
+                    to={backPath}
+                    className={classes.subheadercontentleft}>
+                        Back
+                </Link>}
+                {params.userid && <Link 
+                    to={backPath} 
+                    onClick={() => dispatch(dataActions.resetData())}
+                    className={classes.subheadercontentleft}>
+                        Back
+                </Link>}
+                <Link 
+                    onClick={() => dispatch(dataActions.resetData())} 
+                    className={classes.subheadercontentright}>
+                        Clear Form
+                </Link>
             </div>
             <UserForm />
         </div>

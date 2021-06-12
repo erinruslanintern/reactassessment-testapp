@@ -59,8 +59,8 @@ const RemovePage = () =>
                 </span>
             </div>)}
             <div className={classes.confirmation}>
-                <button onClick={backHandler}>No</button>
-                <button onClick={removeHandler}>Yes</button>
+                <button onClick={backHandler} className={classes.button}>No</button>
+                <button onClick={removeHandler} className={classes.button}>Yes</button>
             </div>
         </div>
     )
