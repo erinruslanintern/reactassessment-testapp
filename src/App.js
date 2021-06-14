@@ -22,7 +22,11 @@ function App()
       dispatch(userActions.setFetchedData(resData.data));
     }
 
-    fetchData();
+    document.title = "Test App";
+    fetchData().catch(error => 
+    {
+      console.log('Something went wrong: ' + error.message);
+    })
   }, [])
 
   return (

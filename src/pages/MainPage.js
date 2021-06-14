@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom';
+import {Link, useRouteMatch} from 'react-router-dom';
 import {useSelector, useDispatch} from 'react-redux';
 import {userActions} from '../store/user';
 
@@ -9,6 +9,7 @@ const MainPage = () =>
 {
     const isAscending = useSelector(state => state.user.isAscending);
     const dispatch = useDispatch();
+    const matchPath = useRouteMatch();
 
     return(
         <div className={classes.main}>
@@ -16,7 +17,7 @@ const MainPage = () =>
                 <span className={classes.headercontent}>Users</span>
             </div>
             <div className={classes.subheader}>
-                <Link onClick={() => dispatch(userActions.sortData())} className={classes.subheadercontentleft}>Sort: {isAscending ? 'Ascending' : 'Descending'}</Link>
+                <Link to={matchPath.path} onClick={() => dispatch(userActions.sortData())} className={classes.subheadercontentleft}>Sort: {isAscending ? 'Ascending' : 'Descending'}</Link>
                 <Link to='/AddUser' className={classes.subheadercontentright}>Add New User</Link>
                 <Link to='/RemoveAll' className={classes.subheadercontentright}>Clear All Data</Link>
             </div>
