@@ -61,6 +61,7 @@ const UserForm = () =>
             <br />
             <div className={classes.datablock}>
                 <table>
+                    <tbody>
                     <tr>
                         <td>
                             <label>Name</label><br />
@@ -116,7 +117,7 @@ const UserForm = () =>
                         </td>
                     </tr>
                     <tr>
-                        <td colspan='2'>
+                        <td colSpan='2'>
                             <label>Website</label><br />
                             <input 
                             type='text' 
@@ -129,6 +130,7 @@ const UserForm = () =>
                             })} />
                         </td>
                     </tr>
+                    </tbody>
                 </table>
             </div>
             <div className={classes.title}>
@@ -136,6 +138,7 @@ const UserForm = () =>
             </div>
             <div className={classes.datablock}>
                 <table>
+                    <tbody>
                     <tr>
                         <td>
                             <label>Street</label><br />
@@ -209,7 +212,7 @@ const UserForm = () =>
                         </td>
                     </tr>
                     <tr>
-                        <td colspan='2'>Coordinate</td>
+                        <td colSpan='2'>Coordinate</td>
                     </tr>
                     <tr>
                         <td>
@@ -253,6 +256,7 @@ const UserForm = () =>
                                 })} />
                         </td>
                     </tr>
+                    </tbody>
                 </table>
             </div>           
             <div className={classes.title}>
@@ -260,6 +264,7 @@ const UserForm = () =>
             </div>
             <div className={classes.datablock}>
                 <table>
+                    <tbody>
                     <tr>
                         <td>
                             <label>Name</label><br />
@@ -295,7 +300,7 @@ const UserForm = () =>
                         </td>
                     </tr>
                     <tr>
-                        <td colspan='2'>
+                        <td colSpan='2'>
                             <label>Catch Phrase</label><br />
                             <textarea 
                                 type='text' 
@@ -312,6 +317,7 @@ const UserForm = () =>
                                 })} />
                         </td>
                     </tr>
+                    </tbody>
                 </table>
             </div>
             <div className={classes.button}>

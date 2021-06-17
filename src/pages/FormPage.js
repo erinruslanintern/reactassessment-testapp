@@ -36,11 +36,11 @@ const FormPage = () =>
                     className={classes.subheadercontentleft}>
                         Back
                 </Link>}
-                <Link 
-                    onClick={() => dispatch(dataActions.resetData())} 
+                <div 
+                    onClick={() => dispatch(dataActions.clearData(params.userid))} 
                     className={classes.subheadercontentright}>
                         Clear Form
-                </Link>
+                </div>
             </div>
             <UserForm />
         </div>

@@ -43,6 +43,14 @@ const dataSlice = createSlice(
             resetData(state)
             {
                 state.user = initData.user;
+            },
+            clearData(state, action)
+            {
+                state.user = 
+                {
+                    ...initData.user,
+                    id: parseInt(action.payload)
+                };
             }
         }
     }

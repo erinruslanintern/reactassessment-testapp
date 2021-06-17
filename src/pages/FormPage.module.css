@@ -37,6 +37,7 @@
 .subheader :hover
 {
   color: white;
+  cursor: pointer;
 }
 
 .subheadercontentright
