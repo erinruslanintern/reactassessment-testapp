@@ -1,6 +1,6 @@
 .main
 {
-  background-color: rgb(201, 201, 201);
+  background-color: rgb(214, 214, 214);
   text-align: center;
   padding: 0 0 3%;
 }
@@ -11,7 +11,7 @@
   height: 5rem;
   display: flex;
   align-items: flex-end;
-  background-color: #353535;
+  background-color: #222222;
 }
 
 .headercontent
@@ -30,7 +30,7 @@
   height: auto;
   display: flex;
   align-items: center;
-  background-color: #353535;
+  background-color: #222222;
   padding: 1px 0;
 }
 

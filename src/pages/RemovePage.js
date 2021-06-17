@@ -26,7 +26,6 @@ const RemovePage = () =>
         {
             dispatch(userActions.removeAll());
         }
-
         history.replace('/Main');
     }
 
